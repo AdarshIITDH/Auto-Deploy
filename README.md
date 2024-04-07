@@ -43,7 +43,7 @@ To implement the projecct in local or on AWS below are the step one need to foll
   
   2- **[Setup Jenkins](https://github.com/AdarshIITDH/Auto-Deploy/blob/main/Jenkins/README.md)** 
   
-  3- **[Setup Sonarqube](https://github.com/AdarshIITDH)** 
+  3- **[Setup Sonarqube](https://github.com/AdarshIITDH/Auto-Deploy/tree/main/Sonarqube)** 
   
   4- **[Setup EKS and other Deployment options](https://github.com/AdarshIITDH)** 
   
