@@ -4,33 +4,46 @@
 
 ## Description
 
-Briefly describe your project here, including its purpose and features.
+This project aims to provide users with an automated deployment process on the AWS platform, allowing them to choose deployment options based on cost considerations. Users are required to log in with their GitHub credentials and select the repository and branch containing their code. The application then scans the code for vulnerabilities and provides a report to the user. If the code passes the security checks, users can proceed with deployment.
 
-## Open Source
+## Architecture
 
-This project is open source, which means that the source code is freely available for anyone to view, use, modify, and distribute. We believe in the power of collaboration and welcome contributions from the community.
+![capstron draf-1 drawio](https://github.com/AdarshIITDH/Auto-Deploy/assets/60352729/c05efa77-178f-48e3-9bf0-418412536e6a)
 
-## Installation
-
-Provide instructions on how to install and set up your project. Include any dependencies and how to install them.
-
-## Usage
-
-Explain how to use your project, including any configuration options and examples.
 
 ## Features
 
-List key features of your project:
+ - **GitHub Integration:** Authenticate with GitHub to access repositories and branches.
+ - **Code Scanning:** Perform automated code scans to identify vulnerabilities.
+ - **Deployment Options:** Choose from multiple deployment options on AWS, including EC2, Fargate, Beanstalk, and EKS.
+ - **Cost Estimation:** Receive estimated deployment costs for each option before making a selection.
+ - **Automated Deployment:** Deploy the application to the selected AWS environment with ease.
 
-| Feature              | Description                                          |
-|----------------------|------------------------------------------------------|
-| Feature 1            | Description of feature 1                             |
-| Feature 2            | Description of feature 2                             |
-| Feature 3            | Description of feature 3                             |
+## Deployment Options
+
+ - **EC2 Deployment:** Traditional virtual server deployment offering flexibility and control.
+ - **Fargate Deployment:** Serverless container deployment for simplified management and scalability.
+ - **Beanstalk Deployment:** Platform-as-a-Service (PaaS) deployment with automatic scaling and management.
+ - **EKS Deployment:** Kubernetes-based deployment for containerized applications with advanced orchestration capabilities.
+
+## Usage
+
+ - Log in with GitHub credentials.
+ - Select the repository and branch containing your code.
+ - Review the code scan report for vulnerabilities.
+ - Choose a deployment option based on cost estimation.
+ - Deploy the application to the selected AWS environment.
+
+
+## Implementation
+
+
+
 
 ## Contributing
 
 We welcome contributions from the community! If you'd like to contribute to this project, please follow these guidelines:
+
 
 - Fork the repository
 - Create a new branch (`git checkout -b feature/your-feature`)
