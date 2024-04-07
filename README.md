@@ -45,7 +45,7 @@ To implement the projecct in local or on AWS below are the step one need to foll
   
   3- **[Setup Sonarqube](https://github.com/AdarshIITDH/Auto-Deploy/tree/main/Sonarqube)** 
   
-  4- **[Setup EKS and other Deployment options](https://github.com/AdarshIITDH)** 
+  4- **[Setup EKS and other Deployment options](https://github.com/AdarshIITDH/Auto-Deploy/tree/main/Setup%20EKS%20and%20other%20Deployment%20options)** 
   
   5- Dry Run
 
