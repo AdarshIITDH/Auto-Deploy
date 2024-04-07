@@ -39,7 +39,7 @@ This project aims to provide users with an automated deployment process on the A
 
 To implement the projecct in local or on AWS below are the step one need to follow.
  
-  1- **[Setup Infrastructure](https://github.com/AdarshIITDH)** 
+  1- **[Setup User Interface](https://github.com/AdarshIITDH)** 
   
   2- **[Setup Jenkins](https://github.com/AdarshIITDH)** 
   
