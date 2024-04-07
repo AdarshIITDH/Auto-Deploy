@@ -37,7 +37,17 @@ This project aims to provide users with an automated deployment process on the A
 
 ## Implementation
 
-
+To implement the projecct in local or on AWS below are the step one need to follow.
+ 
+  1- **[Setup Infrastructure](https://github.com/AdarshIITDH)** 
+  
+  2- **[Setup Jenkins](https://github.com/AdarshIITDH)** 
+  
+  3- **[Setup Sonarqube](https://github.com/AdarshIITDH)** 
+  
+  4- **[Setup EKS and other Deployment options](https://github.com/AdarshIITDH)** 
+  
+  5- Dry Run
 
 
 ## Contributing
