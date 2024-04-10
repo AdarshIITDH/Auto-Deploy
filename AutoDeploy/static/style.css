@@ -1,0 +1,188 @@
+body {
+  background-image: url("images/devops-services.jpg");
+  background-color: #333; /* Dark background for contrast */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Clear and readable font */
+  color: #FFFFFF; /* White color for text */
+}
+
+.container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay with transparency */
+  z-index: -1; /* Behind the content */
+}
+
+
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px; /* Adjust the width as needed */
+  background-color: #202637;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  margin-bottom: 10px;
+}
+
+.navigation a {
+  color: #8193b2;
+  text-decoration: none;
+  display: block; /* Make the entire list item clickable */
+  padding: 5px 10px;
+  transition: border-color 0.3s; /* Add a smooth transition effect for hover */
+}
+
+.navigation a:hover {
+  border-color: #00ebd4; /* Change the border color on hover */
+  color: #00ebd4;
+}
+
+.container {
+  position: relative; /* Required for ::before to work correctly */
+  margin-left: 220px;
+  padding: 20px;
+  background-color: transparent; /* Transparent so the overlay shows through */
+  color: #FFFFFF;
+  border-radius: 5px;
+  text-align: left;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Hide overflow from the pseudo-element */
+}
+
+h1,
+h3,
+h4 {
+  font-family: 'Share Tech';
+  font-weight: 900;
+  font-size: 24px;
+  color: #00ebd4;
+  animation: pulse 0.9s infinite;
+  margin: 10px 0;
+}
+
+.inline {
+  display: inline;
+  margin-left: 10px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.cursor:after {
+  content: "_";
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+
+.sign:before {
+  content: "> ";
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.sub-item {
+  margin-left: 40px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #f0f0f0; */
+  background-color: gray;
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+.loading-message {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  position: absolute;
+  top: calc(50% + 25px); /* Position the message below the loader */
+}
+
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

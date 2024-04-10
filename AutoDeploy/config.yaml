@@ -1,0 +1,21 @@
+{
+    "JENKINS_URL": "",
+    "JENKINS_JOB": "SonarQube_Scanner",
+    "JENKINS_JOB2": "Create_DockerImage",
+    "JENKINS_JOB3": "Deployment_EC2",
+    "JENKINS_JOB4": "Deployment_On_EKS",
+    "JENKINS_JOB5": "Delete_EC2",
+    "JENKINS_JOB6": "Delete_EKS",
+    "JENKINS_USERNAME": "",
+    "JENKINS_API_TOKEN": "",
+    "CLIENT_ID": "",
+    "CLIENT_SECRET": "",
+    "MONGODB":"",
+    "DATABASE":"autodeploy",
+    "REDIRECT_URI":"http://127.0.0.1:5001/callback",
+    "AWS_ACCESS_KEY_ID":"",
+    "AWS_SECRET_ACCESS_KEY":"",
+    "AWS_REGION_NAME":"eu-north-1",
+    "URL": "",
+  }
+  

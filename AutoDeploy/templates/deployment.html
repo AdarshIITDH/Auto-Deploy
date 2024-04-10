@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deployment</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <style>
+      body {
+        /* background-image: url("/static/images/devops-services.jpg");  */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .form-container {
+        width: 50%;
+        background-color: transparent; /* rgba(255, 255, 255, 0.8); */
+        padding: 20px;
+        border-radius: 10px;
+        text-align: left;
+      }
+
+      .service-card {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-right: 20px; /* Add margin between cards */
+      }
+
+      .service-card:last-child {
+        margin-right: 0; /* Remove margin from the last card */
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-card .card-body {
+        padding: 20px;
+      }
+      .service-card .card-title {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .service-card .card-text {
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .service-card .price {
+        font-size: 18px;
+        color: #007bff;
+        margin-bottom: 20px;
+      }
+      .service-card .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      .service-card .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      .card-body {
+        background-color: #ffffff; /* Set background color */
+      }
+      .card-title,
+      .card-text {
+        color: #000000; /* Set text color */
+      }
+
+      .card {
+        width: 100%; /* Set the width of the card */
+      }
+
+      .line {
+        border-top: 2px solid #1b1616;
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="login">Login</a></li>
+        <li><a href="configuration">Configuration</a></li>
+        <li><a href="stack">Stack</a></li>
+        <li><a href="deployment">Deployment</a></li>
+        <li><a href="deployed">Deployed</a></li>
+      </ul>
+    </div>
+    <div class="container mt-5">
+      <div class="">
+        <div id="loader-wrapper" class="loader-wrapper" style="display: none">
+          <div class="loader"></div>
+          <div class="loading-message">Please wait...</div>
+        </div>
+        <h1>Deployment</h1>
+        <div class="">
+          <div class="row" id="serviceContainer">
+            <!-- <div class="col-md-4">
+              <div class="card service-card">
+                <div class="card-body">
+                  <h5 class="card-title">Service 1</h5>
+                  <hr class="line" />
+                  <p class="card-text">Description of Service 1 goes here.</p>
+                  <hr class="line" />
+                  <p class="card-text"><strong>Price:</strong> $10</p>
+                  <hr class="line" />
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#confirmModal1"
+                  >
+                    Select
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card service-card">
+                <div class="card-body">
+                  <h5 class="card-title">Service 2</h5>
+                  <p class="card-text">Description of Service 2 goes here.</p>
+                  <a href="#" class="btn btn-primary">Select</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card service-card">
+                <div class="card-body">
+                  <h5 class="card-title">Service 3</h5>
+                  <p class="card-text">Description of Service 3 goes here.</p>
+                  <a href="#" class="btn btn-primary">Select</a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <!-- <label for="deployment">Select Deployment Type:</label> -->
+        <!-- <select id="deployment" name="deployment">
+          <option value="Normal">Normal</option>
+          <option value="EKS">EKS</option></select
+        ><br /><br /> -->
+        <!-- <div id="selectedDetails" style="display: none">
+          <h2>Selected Deployment Details</h2>
+          <p><strong>Name:</strong> <span id="repoName"></span></p>
+          <p><strong>Price:</strong> <span id="price"></span></p>
+        </div> -->
+        <!-- <input type="submit" value="Submit" onclick="apicall()" /> -->
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="confirmModal1"
+      tabindex="-1"
+      aria-labelledby="confirmModal1Label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5
+              class="modal-title"
+              id="confirmModal1Label"
+              style="color: #000000"
+            >
+              Confirmation
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" style="color: #000000" id="popup_msg">
+            Are you sure you want to select Service 1?
+          </div>
+          <span id="selectedServiceName" style="display: none"></span>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              onclick="apicall()"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+      <div
+        id="toasterSuccess"
+        class="toast align-items-center text-white bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Success message here!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <div
+        id="toasterFail"
+        class="toast align-items-center text-white bg-danger border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Error message here!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../static/deployment.js"></script>
